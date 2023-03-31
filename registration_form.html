@@ -87,7 +87,66 @@
 			}
 		}
 
-	
+		// Validation For Address
+		function checkAddress()
+		{
+			var f=document.frm.address.value;
+			var reg=/^[a-zA-Z0-9-.,'\s]+$/;
+
+			if(f=="")
+			{
+				document.getElementById("address").innerHTML = "Please Enter Address";
+			}
+			else if(!reg.test(f))
+			{
+				document.getElementById("address").innerHTML = "Please Enter Valid Address(Not Allowed Special Symbol)";
+			}
+			else
+			{
+				document.getElementById("address").innerHTML = "";
+			}
+		}
+
+		// Validation For Password
+		function checkPassword()
+		{
+			var f=document.frm.password.value;
+			var reg=/^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+
+			if (f=="")
+			{
+				document.getElementById("password").innerHTML = "Please Enter Password"
+			}
+			else if(!reg.test(f))
+			{
+				document.getElementById("password").innerHTML = "Password Contain Atleast One Upper,Lower,Special Character and digit with the length of 8-15"
+			}
+			else
+			{
+				document.getElementById("password").innerHTML = ""
+			}
+		}
+
+		// Validation For Confirm Password
+		function checkCPassword()
+		{
+			var p1=document.frm.password.value;
+			var p2=document.frm.cpassword.value;
+
+			if (p2=="")
+			{
+				document.getElementById("cpassword").innerHTML = "Please Enter Confirm Password";
+			}
+			else if(p1!=p2)
+			{
+				document.getElementById("cpassword").innerHTML = "Password and Confirm Password Does Not Match";
+			}
+			else
+			{
+				document.getElementById("cpassword").innerHTML = "";
+			}
+		}
+
 	</script>
 </head>
 <body>
@@ -115,7 +174,8 @@
 		</tr>
 		<tr>
 			<td>Address</td>
-			<td><textarea cols="20" rows="5" name="address" placeholder="Enter Your Address"></textarea></td>
+			<td><textarea cols="20" rows="5" name="address" onblur="checkAddress();"placeholder="Enter Your Address"></textarea></td>
+			<td><span id="address"></span></td>
 		</tr>
 		<tr>
 			<td>Gender</td>
