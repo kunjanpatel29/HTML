@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style type="text/css">
+	body
+	{
+		background-color: lightgreen;
+		font-family: sans-serif;
+	}
+	span
+	{
+		color: red;
+		font-weight: bold;
+		font-size: small;
+	}
+</style>
+
 	<title>Registration Form</title>
 
 	<!-- JavaScript Validation -->
@@ -150,6 +164,7 @@
 	</script>
 </head>
 <body>
+	<h1>Registration Form</h1>
 <form name="frm" method="post" action="">
 	<table>
 		<tr>
@@ -164,12 +179,12 @@
 		</tr>
 		<tr>
 			<td>Email</td>
-			<td><input type="text" name="email" onblur="checkEmail();" placeholder="Enter Your Email"></td>
+			<td><input type="text" name="email" onblur="checkEmail();" placeholder="Enter Your Email Id"></td>
 			<td><span id="email"></span></td>
 		</tr>
 		<tr>
 			<td>Mobile</td>
-			<td><input type="text" name="mobile" onblur="checkMobile();" placeholder="Enter Your MobileNo"></td>
+			<td><input type="text" name="mobile" onblur="checkMobile();" placeholder="Enter Your Mobile Number"></td>
 			<td><span id="mobile"></span></td>
 		</tr>
 		<tr>
